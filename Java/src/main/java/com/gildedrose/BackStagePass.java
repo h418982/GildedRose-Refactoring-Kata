@@ -22,15 +22,15 @@ public class BackStagePass implements itemInterface {
     }
 
     private boolean checkSellIn (int numCheck){
-        return item.sellIn < numCheck;
+        return item.sellIn > numCheck;
     }
 
     private void decreaseSellIn(){
-        item.sellIn--;
+        item.sellIn -= 1;
     }
 
     private void increaseQualityByAmount(int numCheck){
-        item.quality = item.quality + numCheck;
+        item.quality += numCheck;
     }
 
     private void zeroOutQuality(){
