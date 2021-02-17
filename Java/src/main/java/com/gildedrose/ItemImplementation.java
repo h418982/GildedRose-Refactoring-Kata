@@ -16,7 +16,7 @@ public class ItemImplementation {
         ITEM_TYPE_MAP.put(brie, new Brie(item));
         ITEM_TYPE_MAP.put(backstagePass, new BackStagePass(item));
         ITEM_TYPE_MAP.put(sulfuras, new Sulfuras());
-        ITEM_TYPE_MAP.put(specialItem, new SpecialItem(item));
+        ITEM_TYPE_MAP.put(specialItem, new ConjuredItem(item));
     }
 
     private boolean isStandardItem(Item item){
@@ -25,7 +25,7 @@ public class ItemImplementation {
 
     public itemInterface itemInterface(Item item){
         if (isStandardItem(item)){
-            return new StandardItem(item);
+            return new ConjuredItem(item);
         }else{
             return ITEM_TYPE_MAP.get(item.name);
         }

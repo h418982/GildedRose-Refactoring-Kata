@@ -1,10 +1,10 @@
 package com.gildedrose;
 
-public class StandardItem implements itemInterface {
+public class ConjuredItem implements itemInterface {
 
     private final Item item;
 
-    public StandardItem(Item item){
+    public ConjuredItem(Item item){
         this.item = item;
     }
 
