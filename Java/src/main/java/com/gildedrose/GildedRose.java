@@ -1,82 +1,36 @@
 package com.gildedrose;
 
 class GildedRose {
+    
+    private static final int lowestQuality = 0;
     Item[] items;
-    private String brie = "Aged Brie";
-    private String backstagePass = "Backstage passes to a TAFKAL80ETC concert";
-    private String sulfuras = "Sulfuras, Hand of Ragnaros";
 
-    public GildedRose(Item[] items) {
+    public GildedRose(Item[] items){
         this.items = items;
     }
 
-    public void updateQuality() {
-        //for (int i = 0; i < items.length; i++) {
-            for (Item item : items){  //switching to for each for better readability and simplicity
-            if (!item.name.equals(brie)
-                    && !item.name.equals(backstagePass)) {
-                if (qualityGreaterThanZero(item)){
-                    if (!item.name.equals(sulfuras)) {
-                        decreaseQuality(item);
-                    }
-                }
-            } else {
-                if(qualityLessThanFifty(item)){
-                    increaseQuality(item);
-
-                    if (item.name.equals(backstagePass)) {
-                        if (checkSellIn(item, 11) && qualityLessThanFifty(item)){
-                                increaseQuality(item);
-                        }
-                        if (checkSellIn(item, 6) && qualityLessThanFifty(item)){
-                                increaseQuality(item);
-                        }
-                    }
-                }
-            }
-
-            if (!item.name.equals(sulfuras)) {
-                decreaseSellIn(item);
-            }
-
-            if (checkSellIn(item, 0)){
-                if (!item.name.equals(brie)) {
-                    if (!item.name.equals(backstagePass) && qualityGreaterThanZero(item) && !item.name.equals(sulfuras)) {
-                                decreaseQuality(item);
-                    } else {
-                        item.quality = item.quality - item.quality;
-                    }
-                } else {
-                        if(qualityLessThanFifty(item)){
-                        increaseQuality(item);
-                    }
-                }
+    public void updateQuality(){
+        for (Item item : items){
+            itemInterface(item).updateItem();
+            if (isLowestQuality(item)){
+                item.quality = lowestQuality;
+            }else if (isHighestQuality(item)){
+                item.quality = QualityValues.highesQuality(item);
             }
         }
     }
 
-//Adding methods for repeatable usage
-    private boolean qualityGreaterThanZero(Item item){
-        return item.quality > 0;
+
+    private itemInterface itemInterface(Item item){
+        return new ItemImplementation(item).itemInterface(item);
     }
 
-    private boolean qualityLessThanFifty(Item item){
-        return item.quality < 50;
+    private boolean isLowestQuality(Item item){
+        return item.quality < lowestQuality;
     }
 
-    private int increaseQuality(Item item){
-        return item.quality++;
+    private boolean isHighestQuality(Item item){
+        return item.quality > QualityValues.highesQuality(item);
     }
-
-    private int decreaseQuality(Item item){
-        return item.quality--;
-    }
-
-    private boolean checkSellIn (Item item, int numCheck){
-        return item.sellIn < numCheck;
-    }
-
-    private int decreaseSellIn (Item item){
-        return item.sellIn--;
-    }
+   
 }
