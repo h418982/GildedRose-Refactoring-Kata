@@ -10,7 +10,7 @@ public class ItemImplementation {
     public static String sulfuras = "Sulfuras, Hand of Ragnaros";
     public static String conjuredItem = "Conjured";
 
-    private final static Map<String, itemInterface> ITEM_TYPE_MAP = new HashMap<>();
+    private final static Map<String, ItemInterface> ITEM_TYPE_MAP = new HashMap<>();
 
     public ItemImplementation(Item item){
         ITEM_TYPE_MAP.put(brie, new Brie(item));
@@ -23,7 +23,7 @@ public class ItemImplementation {
         return !ITEM_TYPE_MAP.keySet().contains(item.name);
     }
 
-    public itemInterface itemInterface(Item item){
+    public ItemInterface itemInterface(Item item){
         if (isStandardItem(item)){
             return new StandardItem(item);
         }else{

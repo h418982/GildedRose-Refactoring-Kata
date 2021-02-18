@@ -1,6 +1,6 @@
 package com.gildedrose;
 
-public class BackStagePass implements itemInterface {
+public class BackStagePass implements ItemInterface {
 
     private final Item item;
 

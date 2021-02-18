@@ -2,9 +2,6 @@ package com.gildedrose;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import com.gildedrose.itemInterface;
-import com.gildedrose.Item;
-import com.gildedrose.ItemImplementation;
 
 class GildedRoseTest {
     private int itemSellInDayNum(GildedRose app) {

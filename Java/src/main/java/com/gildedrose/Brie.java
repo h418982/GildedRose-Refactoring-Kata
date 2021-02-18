@@ -1,6 +1,6 @@
 package com.gildedrose;
 
-public class Brie implements itemInterface {
+public class Brie implements ItemInterface {
 
     private final Item item;
 

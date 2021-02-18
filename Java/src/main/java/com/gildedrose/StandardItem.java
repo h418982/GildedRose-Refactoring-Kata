@@ -1,6 +1,6 @@
 package com.gildedrose;
 
-public class StandardItem implements itemInterface {
+public class StandardItem implements ItemInterface {
 
     private final Item item;
 
