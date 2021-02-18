@@ -1,6 +1,6 @@
 package com.gildedrose;
 
-public interface itemInterface {
+public interface ItemInterface {
     void updateItem();
     
 }
