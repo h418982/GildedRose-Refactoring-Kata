@@ -29,9 +29,7 @@ class GildedRoseTest {
     @Test
     public void sulfurasNotAltered() {
         GildedRose app = newGildedRose(ItemImplementation.sulfuras, 1, 80);
-
         app.updateQuality();
-
         assertEquals(80, itemQualityVal(app));
         assertEquals(1, itemSellInDayNum(app));
     }

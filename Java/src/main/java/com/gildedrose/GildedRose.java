@@ -20,7 +20,6 @@ class GildedRose {
         }
     }
 
-
     private itemInterface itemInterface(Item item){
         return new ItemImplementation(item).itemInterface(item);
     }

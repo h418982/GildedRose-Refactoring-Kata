@@ -7,6 +7,7 @@ public class BackStagePass implements itemInterface {
     public BackStagePass(Item item){
         this.item = item;
     }
+    
     public void updateItem(){
         decreaseSellIn();
         if (checkSellIn(10)){

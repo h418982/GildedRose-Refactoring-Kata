@@ -15,8 +15,6 @@ public class StandardItem implements itemInterface {
         }else{
             decreaseQuality(decreaseValueUnderZeroDays());
         }
-
-
     }
 
     public void decreaseQuality(int qualityAmount){
@@ -38,8 +36,5 @@ public class StandardItem implements itemInterface {
     public int decreaseValueUnderZeroDays(){
         return decreaseValueOverZeroDays() * 2;
     }
-
-
-
-    
+   
 }

@@ -17,7 +17,7 @@ public class Brie implements itemInterface {
          item.sellIn--;
     }
 
-    public void increaseQuality(){ //watch for other methods since Brie can increase by 1 or 2 depending on sell date
+    public void increaseQuality(){ 
         item.quality++;
     }
 
